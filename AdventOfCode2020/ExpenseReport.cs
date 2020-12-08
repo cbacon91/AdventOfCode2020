@@ -16,8 +16,9 @@ namespace AdventOfCode2020
 
     public ExpenseReport()
     {
-      Expenses = ReadInput("expense_report");
+      Expenses = ReadInputAsInts("expense_report");
     }
+
 
     public int[] SummableExpenses2()
     {

@@ -7,13 +7,16 @@ namespace AdventOfCode2020
 {
   public class Solver
 {
-    protected IEnumerable<int> ReadInput(string filename)
+    protected IEnumerable<int> ReadInputAsInts(string filename) =>
+      ReadInput(filename)
+        .Select((i) => int.Parse(i));
+
+    protected IEnumerable<string> ReadInput(string filename)
     {
       using var reader = new StreamReader($"./input/{filename}");
       return reader
         .ReadToEnd()
-        .Split(Environment.NewLine)
-        .Select((i) => int.Parse(i));
+        .Split(Environment.NewLine);
     }
   }
 }
